@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Basic Grid</title>
+
+  <style>
+    * {
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Every row is 90% as wide as it's parent, the <body> */
+    div.row {
+      width: 90%;
+      margin: auto;
+    }
+
+    /* clearfix styles to keep the row divs from collapsing,
+      since all their children are floated */
+    div.row:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* this selector selects all divs that have a class name
+      beginning with 'col_' */
+    div[class^='col_']  {
+      float: left;
+      background-color: #99FFCC;
+      border: 1px solid black;
+      padding: 1rem;
+    }
+
+    div.col_1_of_3 {width: 33.3333%;}
+    div.col_1_of_2 {width: 50%;}
+    div.col_1_of_4 {width: 25%;}
+    div.col_3_of_4 {width: 75%;}
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col_1_of_3">
+    
+    <video src="dipper-diving.mp4" type="video/mp4" autoplays controls loop></video>
+      
+    </div>
+    <div class="col_1_of_3">grids</div>
+    <div class="col_1_of_3">rule.</div>
+  </div>
+
+  <div class="row">
+    <div class="col_1_of_2">This is</div>
+    <div class="col_1_of_2">cool</div>
+  </div>
+
+  <div class="row">
+    <div class="col_1_of_4">and not</div>
+    <div class="col_3_of_4">intimidating!</div>
+  </div>
+</body>
+</html>
